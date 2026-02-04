@@ -18,3 +18,5 @@ st.markdown(
     ---
     """
 )
+
+st.selectbox("모델을 선택하세요.", ("GPT-3", "GPT-4"))
