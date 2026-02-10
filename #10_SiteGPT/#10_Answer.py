@@ -108,6 +108,10 @@ with st.sidebar:
         value="https://developers.cloudflare.com/vectorize/"
     )
 
+    st.write("---")
+    st.link_button("github commit", "https://github.com/darrenkim-d1/fullstack-gpt/commit/998b8ba7d683af47a60fc7124101e3f1a3e32d28")
+
+
 if url2:
     retriever2 = load_website(url2)
 
