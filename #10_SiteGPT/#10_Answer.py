@@ -9,7 +9,8 @@ from langchain.document_transformers import Html2TextTransformer
 import streamlit as st
 
 llm = ChatOpenAI(
-    temperature=0.1
+    temperature=0.1,
+    # api_key=openai_key
 )
 
 answers_prompt = ChatPromptTemplate.from_template(
@@ -109,8 +110,12 @@ with st.sidebar:
     )
 
     st.write("---")
-    st.link_button("github commit", "https://github.com/darrenkim-d1/fullstack-gpt/commit/998b8ba7d683af47a60fc7124101e3f1a3e32d28")
+    openai_key = st.text_input(
+        label="OPEN_AI_API_KEY", type="password"
+    )
 
+    st.write("---")
+    st.link_button("github commit", "https://github.com/darrenkim-d1/fullstack-gpt/commit/998b8ba7d683af47a60fc7124101e3f1a3e32d28")
 
 if url2:
     retriever2 = load_website(url2)
