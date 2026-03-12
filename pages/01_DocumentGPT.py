@@ -8,6 +8,7 @@ from langchain.vectorstores.faiss import FAISS
 from langchain.chat_models import ChatOpenAI
 from langchain.callbacks.base import BaseCallbackHandler
 import streamlit as st
+import os
 
 st.set_page_config(
     page_title="DocumentGPT",
@@ -41,7 +42,15 @@ llm = ChatOpenAI(
 @st.cache_data(show_spinner="Embedding file...")
 def embed_file(file):
     file_content = file.read()
-    file_path = f"./.cache/files/{file.name}"
+
+    # 1. 저장할 디렉토리 경로 설정
+    cache_dir = "./.cache/files" 
+    
+    # 2. 해당 디렉토리가 없으면 생성 (exist_ok=True로 중복 생성 방지)
+    if not os.path.exists(cache_dir):
+        os.makedirs(cache_dir)
+    
+    file_path = os.path.join(cache_dir, file.name)
     
     with open(file_path, "wb") as f:
         f.write(file_content)
