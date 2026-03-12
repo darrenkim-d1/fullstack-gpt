@@ -120,7 +120,7 @@ Welcome!
 
 with st.sidebar:
     st.write("---")
-    st.link_button("github commit", "https://github.com/darrenkim-d1/fullstack-gpt/commit/b22e49ce9ecca809ea2febea1f87120ab6ba8ca4")
+    st.link_button("github commit", "https://github.com/darrenkim-d1/fullstack-gpt/commit/e9d469c57994859327d21d216f04ba756030fa3b")
     st.write("---")
 
     file = st.file_uploader(
