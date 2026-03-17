@@ -159,7 +159,7 @@ st.markdown(
 
 with st.sidebar:
     st.write("---")
-    st.link_button("github commit", "https://github.com/darrenkim-d1/fullstack-gpt/commit/e9d469c57994859327d21d216f04ba756030fa3b")
+    st.link_button("github commit", "https://github.com/darrenkim-d1/fullstack-gpt/commit/4167021e36447f9636064465e2ab758f7b85e06c")
     st.write("---")
     url = st.text_input(
         "Write down a URL",
